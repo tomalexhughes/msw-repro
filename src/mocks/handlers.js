@@ -5,7 +5,7 @@ export const handlers = [
     const isJson = req.headers.get('content-type')?.endsWith('json')
     const isValidJson = isJson && req.body?.constructor.name === 'Object'
     const type = typeof req.body // typeof returns 'string' in browser and 'object' in tests
-    console.log({ req, isJson, isValidJson, type });
+    console.log({ req, isJson, isValidJson, type, body: req.body });
     return res(ctx.json(true));
   })
 ];
